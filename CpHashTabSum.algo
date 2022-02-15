@@ -1,0 +1,35 @@
+ALGORITHM TotalTab 
+VAR
+    tab1 : ARRAY_OF INTEGER;
+    tab2 : ARRAY_OF INTEGER;
+    hash : HASH_TABLE<INTEGER,INTEGER>
+    somme,i,j INTEGER;
+    longueur : INTEGER ;
+BEGIN
+ somme, longueur := 0;
+    FOR i FROM 0 TO tab1.length  DO
+        hash.insert(tab1[i],1)
+    END_FOR
+       
+    FOR j FROM 0 TO tab2.length DO
+            IF (hash.lookup(tab2[j])) THEN
+                hash.insert(tab2[j],2)
+            ELSE
+                hash.insert(tab2[j],1)
+            END_IF
+
+    END_FOR
+
+    IF (tab1.length<tab2.length) THEN
+        longueur := tab2.length
+    ELSE
+        longueur := tab1.length
+    END_IF
+
+    FOR i FROM 0 TO longueur  DO
+        IF (hash.get(tab1[i]=2)) THEN
+        somme:= somme + tab1[i]*2;
+        END_IF
+    END_FOR
+
+END

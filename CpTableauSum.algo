@@ -1,0 +1,18 @@
+ALGORITHM TotalTab 
+VAR
+    Tab1  array_name : ARRAY_OF INTEGER;
+    Tab2  array_name : ARRAY_OF INTEGER;
+    somme,i,j INTEGER;
+BEGIN
+ somme := 0;
+    FOR i FROM 0 TO Tab1.length  DO
+        FOR j FROM 0 TO tab2.length  DO
+            if (tab1[1]=tab2[j])then 
+            somme := somme + tab[1]*2;
+            break;
+            END_IF
+        END_FOR
+    END_FOR
+        write("la somme des doublants est :",sum);
+
+END
